@@ -1,39 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan:400,500,700|Trade+Winds&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+  vertical-align: baseline;
+  box-sizing:border-box;
+  max-width:100%;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  font-family: "Spartan", sans-serif;
+}
+
+a {
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+a:hover {
+  color:#DCDCDC;
 }
 
 main {
-  width: 85vw;
-  min-height: 80vh;
-  max-width: 1024px;
-  margin: 35px auto;
-  background: #fff;
-  padding: 15px;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
-.grid-view {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-.page-view {
-  min-height: 40vh;
-}
-
-.grid-view div.card.ui {
-  margin: 1.25rem;
-}
-/*
-.main-img {
-  display: block;
-  border-radius: 100%;
-  margin: 0 auto;
-} */
-
-header h1 {
-  text-align: center;
+.character-list {
+  margin-top:20px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  width:90%;
 }
