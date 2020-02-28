@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -27,6 +28,7 @@ const CharacterCard = ({ character }) => {
         <p><span>Species:&nbsp;</span>{character.species}</p>
         <p><span>Status:&nbsp;</span>{character.status}</p>
         <p><span>Gender:&nbsp;</span>{character.gender}</p>
+        <NavLink className="card-link" to="/locations">Location</NavLink>
       </Information>
     </Container>
   )
