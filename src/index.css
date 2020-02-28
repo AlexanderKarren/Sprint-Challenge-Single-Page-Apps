@@ -50,3 +50,9 @@ main {
   flex-wrap:wrap;
   width:90%;
 }
+
+.search-form {
+  width:100%;
+  display:flex;
+  justify-content:center;
+}

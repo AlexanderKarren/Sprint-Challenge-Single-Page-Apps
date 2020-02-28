@@ -1,10 +1,37 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+import { ReactSVG } from "react-svg";
 
-export default function SearchForm() {
- 
+const SearchContainer = styled.form`
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background-color:#F0F8FF;
+  border-radius:10px;
+  padding:10px;
+  width:60%;
+`
+
+const SearchBar = styled.input`
+  outline:none;
+  border:0;
+  background-color:inherit;
+  font-size:120%;
+  width:95%
+`
+
+const SearchForm = ({ updateQuery }) => {
+  const handleChange = event => {
+    updateQuery(event.target.value);
+  }
   return (
     <section className="search-form">
-     // Add a search form here
+      <SearchContainer>
+        <ReactSVG src="search.svg" />
+        <SearchBar type="text" onChange={handleChange}/>
+      </SearchContainer>
     </section>
   );
 }
+
+export default SearchForm;
