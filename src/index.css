@@ -68,6 +68,12 @@ section {
   align-items:center;
 }
 
+.episode-list {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
 .search-form {
   width:100%;
   display:flex;

@@ -7,7 +7,7 @@ const CharacterList = ({ characters }) => {
 
   return (
     <section className="character-list">
-      <SearchForm updateQuery={updateQuery}/>
+      <SearchForm className="search-form-characters" bgColor="#F0F8FF" updateQuery={updateQuery}/>
       {characters.map(character => {
         let passed = false;
         Object.values(character).forEach(value => {

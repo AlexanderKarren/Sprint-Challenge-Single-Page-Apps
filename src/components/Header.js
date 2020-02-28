@@ -18,15 +18,10 @@ const MainHeading = styled.h1`
 `
 
 const Links = styled.div`
-  width:20%;
+  width:40%;
   display:flex;
   justify-content:space-between;
 `
-
-const linkStyle = {
-  textDecoration: "none",
-  color: "inherit",
-}
 
 export default function Header() {
   return (
@@ -36,6 +31,7 @@ export default function Header() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/characters">Characters</NavLink>
         <NavLink to="/locations">Locations</NavLink>
+        <NavLink to="/episodes">Episodes</NavLink>
       </Links>
     </StyledHeader>
   );

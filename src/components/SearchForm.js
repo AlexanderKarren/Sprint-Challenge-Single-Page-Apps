@@ -6,7 +6,6 @@ const SearchContainer = styled.form`
   display:flex;
   align-items:center;
   justify-content:space-between;
-  background-color:#F0F8FF;
   border-radius:10px;
   padding:10px;
   width:60%;
@@ -20,13 +19,13 @@ const SearchBar = styled.input`
   width:95%
 `
 
-const SearchForm = ({ updateQuery }) => {
+const SearchForm = ({ updateQuery, bgColor }) => {
   const handleChange = event => {
     updateQuery(event.target.value);
   }
   return (
     <section className="search-form">
-      <SearchContainer>
+      <SearchContainer style={{backgroundColor:bgColor}}>
         <ReactSVG src="search.svg" />
         <SearchBar type="text" onChange={handleChange}/>
       </SearchContainer>

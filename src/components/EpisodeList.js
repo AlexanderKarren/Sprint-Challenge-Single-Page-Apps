@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
 import SearchForm from "./SearchForm";
-import LocationCard from "./LocationCard";
+import EpisodeCard from "./EpisodeCard";
 import axios from "axios";
-import styled from "styled-components";
 
-const LocationsList = () => {
+const EpisodeList = () => {
     const [query, updateQuery] = useState("");
-    const [locationsList, updateList] = useState([]);
+    const [episodeList, updateList] = useState([]);
 
     useEffect(() => {
-        axios.get("https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/location")
+        axios.get("https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/episode")
         .then(response => {
             console.log(response.data.results);
             updateList(response.data.results);
@@ -20,11 +19,11 @@ const LocationsList = () => {
       }, [])
 
     return (
-        <section class="locations-list">
-            <SearchForm updateQuery={updateQuery} bgColor="#FFEFD5"/>
-            {locationsList.map(location => {
+        <section className="episode-list">
+            <SearchForm bgColor="#98FB98" updateQuery={updateQuery}/>
+            {episodeList.map(episode => {
                 let passed = false;
-                Object.values(location).forEach(value => {
+                Object.values(episode).forEach(value => {
                     if ((typeof value === "string") && (!(value.includes("https")))) {
                         if (value.toLowerCase().includes(query.toLowerCase())) {
                             passed = true;
@@ -32,11 +31,11 @@ const LocationsList = () => {
                     }
                 })
                     if (passed) {
-                        return <LocationCard location={location}/>
+                        return <EpisodeCard episode={episode}/>
                     }
                 })}
         </section>
     )
 }
 
-export default LocationsList;
+export default EpisodeList;
